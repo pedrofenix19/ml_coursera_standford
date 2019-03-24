@@ -15,12 +15,12 @@ J = 0;
 
 
 % h_theta = [ theta(1) + theta(2)X]
-h_theta = X * theta
+h_theta = X * theta;
  
 % add a y column to ease the sum calculation
-h_theta(:,2) = -y
-J_aux = sum(h_theta,2)
-J = (1 / (2 * m)) * sum(J_aux .^ 2)
+h_theta(:,2) = -y;
+J_aux = sum(h_theta,2);
+J = (1 / (2 * m)) * sum(J_aux .^ 2);
 
 
 

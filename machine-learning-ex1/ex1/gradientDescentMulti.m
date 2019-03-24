@@ -37,8 +37,8 @@ for iter = 1:num_iters
     % ============================================================
 
     % Save the cost J in every iteration    
-    jaux = computeCostMulti(X, y, theta)
-    J_history(iter) = jaux;
+    %jaux = computeCostMulti(X, y, theta)
+    J_history(iter) = computeCostMulti(X, y, theta);
 
 end
 
