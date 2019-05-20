@@ -22,20 +22,14 @@ grad = zeros(size(theta));
 %       efficiently vectorized. For example, consider the computation
 %
 %           sigmoid(X * theta)
-theta
-X
-y
-lambda
-X * theta
-fprintf("Sigmoid\n")
-h = sigmoid(X * theta)
+h = sigmoid(X * theta);
 %
 %       Each row of the resulting matrix will contain the value of the
 %       prediction for that example. You can make use of this to vectorize
 %       the cost function and gradient computations. 
 %
 
-J = (-1/m) * (y' * log(h) + (1 - y)' * log(1 - h)) + (lambda / (2 * m)) * sum(theta(2:end,:).^2)
+J = (-1/m) * (y' * log(h) + (1 - y)' * log(1 - h)) + (lambda / (2 * m)) * sum(theta(2:end,:).^2);
 % Hint: When computing the gradient of the regularized cost function, 
 %       there're many possible vectorized solutions, but one solution
 %       looks like:
@@ -45,7 +39,8 @@ J = (-1/m) * (y' * log(h) + (1 - y)' * log(1 - h)) + (lambda / (2 * m)) * sum(th
 %           grad = grad + YOUR_CODE_HERE (using the temp variable)
 %
 
-grad = (1/m) * (X' * (h - y))
+grad = (1/m) * (X' * (h - y));
+grad(2:end, :) = grad(2:end, :) + ((lambda/m) * theta(2:end, :));
 
 
 
