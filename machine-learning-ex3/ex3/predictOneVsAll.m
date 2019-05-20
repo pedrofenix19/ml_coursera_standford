@@ -8,6 +8,8 @@ function p = predictOneVsAll(all_theta, X)
 %  of values from 1..K (e.g., p = [1; 3; 1; 2] predicts classes 1, 3, 1, 2
 %  for 4 examples) 
 
+[x, y] = size(all_theta)
+[x, y] = size(X)
 m = size(X, 1);
 num_labels = size(all_theta, 1);
 
@@ -29,8 +31,17 @@ X = [ones(m, 1) X];
 %       are in rows, then, you can use max(A, [], 2) to obtain the max 
 %       for each row.
 %       
+all_theta_t = all_theta';
+for i = 1:num_labels
+   sigmoid(X(1,:) * all_theta(i,:)')  
+endfor
 
 
+for i = 1:m
+  for j = 1:num_labels
+    %c = sigmoid(X);
+  endfor
+endfor
 
 
 
