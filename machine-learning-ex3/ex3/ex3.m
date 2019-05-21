@@ -82,7 +82,8 @@ pause;
 
 %% ================ Part 3: Predict for One-Vs-All ================
 
-pred = predictOneVsAll(all_theta, X);
+pred = predictOneVsAll(all_theta, sel);
+reshape(pred,10,10)'
 
-fprintf('\nTraining Set Accuracy: %f\n', mean(double(pred == y)) * 100);
+%fprintf('\nTraining Set Accuracy: %f\n', mean(double(pred == y)) * 100);
 

@@ -21,6 +21,16 @@ p = zeros(size(X, 1), 1);
 %       can use max(A, [], 2) to obtain the max for each row.
 %
 
+X = [ones(size(X,1), 1) X];
+
+for i = 1:m
+    hidden_nodes = zeros(size(Theta1,1),1);
+    for j = 1:size(Theta2,2)
+        hidden_nodes(j) = sigmoid(X(i,:) * Theta1(j,:)')
+    endfor
+    p(i)
+endfor
+
 
 
 
