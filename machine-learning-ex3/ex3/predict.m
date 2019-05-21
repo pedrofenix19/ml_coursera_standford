@@ -25,10 +25,17 @@ X = [ones(size(X,1), 1) X];
 
 for i = 1:m
     hidden_nodes = zeros(size(Theta1,1),1);
-    for j = 1:size(Theta2,2)
-        hidden_nodes(j) = sigmoid(X(i,:) * Theta1(j,:)')
-    endfor
-    p(i)
+    %for j = 1:size(Theta2,2)
+    %    hidden_nodes(j) = sigmoid(Theta1(j,:) * X(i,:)')
+    %endfor
+    hidden_nodes = sigmoid(Theta1 * X(i,:)');
+    hidden_nodes = [1; hidden_nodes];
+    hidden_nodes_output = zeros(size(Theta2,1),1);
+    
+    hidden_nodes;
+    hidden_nodes_output = sigmoid(Theta2 * hidden_nodes);
+    [max_val, p(i)] = max(hidden_nodes_output);
+    
 endfor
 
 
