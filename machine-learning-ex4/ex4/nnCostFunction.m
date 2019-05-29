@@ -40,7 +40,6 @@ Theta2_grad = zeros(size(Theta2));
 %         computed in ex4.m
 
 accum_m = 0;
-tri = 0;
 
 for i = 1:m
     a_1 = [1 ; X(i,:)'];
@@ -55,14 +54,16 @@ for i = 1:m
     %Backpropagation
     delta_3 = h - y_vector;
     delta_2 = Theta2(:,2:end)' * delta_3 .* sigmoidGradient(z_2);
-    size(delta_2)
-    size(delta_3)
-    %delta_2 = delta_2(2:end,:);
     Theta2_grad += delta_3 * a_2';
     Theta1_grad += delta_2 * a_1';
 endfor
 
 J = accum_m / m + (lambda / (2 * m)) * (sum(sum(Theta1(:,2:end) .^ 2,1)) + sum(sum(Theta2(:,2:end) .^ 2,1)) );
+Theta1_grad = (Theta1_grad / m);
+Theta2_grad = (Theta2_grad / m);
+
+Theta1_grad(:,2:end) += (lambda / m) * Theta1(:,2:end);
+Theta2_grad(:,2:end) += (lambda / m) * Theta2(:,2:end);
 
 %
 % Part 2: Implement the backpropagation algorithm to compute the gradients
