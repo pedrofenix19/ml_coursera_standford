@@ -23,7 +23,22 @@ sigma = 0.3;
 %        mean(double(predictions ~= yval))
 %
 
+c_set = [0.01;0.03;0.1;0.3;1;3;10;30];
+sigma_set = [0.01;0.03;0.1;0.3;1;3;10;30];
+min_error = Inf;
 
+for pos_c = 1:rows(c_set)
+    for pos_sigma = 1:rows(sigma_set)
+        model= svmTrain(X, y, c_set(pos_c), @(x1, x2) gaussianKernel(x1, x2, sigma_set(pos_sigma))); 
+        predictions = svmPredict(model, Xval);
+        prediction_error = mean(double(predictions ~= yval));
+        if(prediction_error < min_error)
+            min_error = prediction_error;
+            C = c_set(pos_c);
+            sigma = sigma_set(pos_sigma);
+        endif
+    endfor
+endfor
 
 
 
