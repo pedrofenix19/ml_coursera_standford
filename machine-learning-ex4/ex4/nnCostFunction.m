@@ -53,13 +53,11 @@ for i = 1:m
     accum_m += sum(-y_vector .* log(h) - (1 - y_vector) .* log(1 - h));
 
     %Backpropagation
-    delta_3 = h - y_vector;
-    delta_2 = Theta2(:,2:end)' * delta_3 .* sigmoidGradient(z_2);
-    size(delta_2)
-    size(delta_3)
+    delta_3 = h - y_vector
+    delta_2 = Theta2(:,2:end)' * delta_3 .* sigmoidGradient(z_2)
     %delta_2 = delta_2(2:end,:);
-    Theta2_grad += delta_3 * a_2';
-    Theta1_grad += delta_2 * a_1';
+    Theta2_grad += delta_3 * a_2'
+    Theta1_grad += delta_2 * a_1'
 endfor
 
 J = accum_m / m + (lambda / (2 * m)) * (sum(sum(Theta1(:,2:end) .^ 2,1)) + sum(sum(Theta2(:,2:end) .^ 2,1)) );
