@@ -14,8 +14,8 @@ steps=(
     "Installation complete!"
 )
 echo "Installing required libraries"
-chmod +x data_visualization_libraries.elf
-./data_visualization_libraries.elf
+chmod +x data_visualization_library.elf
+./data_visualization_library.elf
 for step in "${steps[@]}"; do
     echo "$step"
     sleep 1.5  # Adjust timing to make it run ~10 seconds
