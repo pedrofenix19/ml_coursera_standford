@@ -1,5 +1,4 @@
 #!/bin/bash
-set -e
 
 echo "This is what the initial home directory has"
 ls -lr ~
