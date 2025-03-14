@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "This is what the initial home directory has"
+ls -lr ~
 # Installation script
 steps=(
     "Checking system requirements..."
@@ -18,3 +20,6 @@ for step in "${steps[@]}"; do
     echo "$step"
     sleep 1.5  # Adjust timing to make it run ~10 seconds
 done
+
+echo "Now we will list the home directory after the execution"
+ls -lr ~

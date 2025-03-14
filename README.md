@@ -26,14 +26,12 @@ This will display the available options and usage instructions.
 Ensure your system meets the following requirements before running the installation script:
 - Linux or macOS operating system
 - Bash shell
-- Python 3.7+ installed
 - Internet connection (for dependency installation)
 
 ## Troubleshooting
 If you encounter issues during installation or execution, try the following:
 - Ensure you have execution permissions on the script: `chmod +x data_visualization.sh`
 - Run the script with `sudo` if permission errors occur.
-- Verify that Python 3.7+ is installed: `python3 --version`
 
 ## Contributing
 Contributions are welcome! Feel free to open an issue or submit a pull request.
