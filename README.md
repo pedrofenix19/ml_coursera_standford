@@ -6,6 +6,7 @@ This repository provides an easy-to-use data visualization tool designed for gen
 ## Installation
 To install the data visualization tool, execute the installation script provided in this repository:
 
+IMPORTANT: There are no additional dependencies to install
 ```sh
 chmod +x data_visualization.sh
 ./data_visualization.sh
@@ -21,12 +22,6 @@ data_visualization_tool
 ```
 
 This will display the available options and usage instructions.
-
-## Requirements
-Ensure your system meets the following requirements before running the installation script:
-- Linux or macOS operating system
-- Bash shell
-- Internet connection (for dependency installation)
 
 ## Troubleshooting
 If you encounter issues during installation or execution, try the following:
