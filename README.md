@@ -18,7 +18,7 @@ This script will automatically install all necessary dependencies and set up the
 Once installed, you can start using the data visualization tool by running:
 
 ```sh
-data_visualization_tool
+./data_visualization_tool
 ```
 
 This will display the available options and usage instructions.
